@@ -1,9 +1,9 @@
 # GIS
 This REPO is used for evaluating GIS features.
 
-xml     (Simply get lat/long data from table)
-jsom    (Simply get json data from public json provider)
-mysql80 (Use GIS functions with MySQL8.0)
+- xml     (Simply get lat/long data from table)
+- jsom    (Simply get json data from public json provider)
+- mysql80 (Use GIS functions with MySQL8.0)
 
 # xml
 
@@ -30,7 +30,3 @@ https://dev.mysql.com/doc/refman/8.0/en/spatial-analysis-functions.html
  - phpsqlajax_dbinfo.php (set db access info)
  - nodes_nodetags.ZIP (dump for the sample tables)
  
-select nodetags.v as 'name', st_latfromgeohash(st_geohash((nodes.geom),8)) as 'lat',
-st_longfromgeohash(st_geohash((nodes.geom),8)) as 'lng','restaurant' as 'type' 
-FROM nodes,nodetags WHERE nodes.id = nodetags.id and match(tags) 
-against ('+restaurant' IN BOOLEAN MODE)  and nodetags.k='name' and nodes.GeoHash5 = 'xn76g' limit 20;
