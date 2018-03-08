@@ -25,7 +25,12 @@ if (!$db_selected) {
 
 // Select all the rows in the markers table
 
-$query = "select nodetags.v as 'name',st_latfromgeohash(st_geohash((nodes.geom),8)) as 'lat', st_longfromgeohash(st_geohash((nodes.geom),8)) as 'lng','restaurant' as 'type' FROM nodes,nodetags WHERE nodes.id = nodetags.id and match(tags) against ('+restaurant' IN BOOLEAN MODE) and nodetags.k='name' and nodes.GeoHash5 = 'xn76g' limit 30";
+$query = "select nodetags.v as 'name',st_latfromgeohash(st_geohash((nodes.geom),8)) as 'lat', 
+st_longfromgeohash(st_geohash((nodes.geom),8)) as 'lng','restaurant' as 'type' 
+FROM nodes,nodetags WHERE nodes.id = nodetags.id and match(tags) 
+against ('+restaurant' IN BOOLEAN MODE) and nodetags.k='name' and 
+nodes.GeoHash5 = 'xn76g' limit 30";
+
 $result = mysql_query($query);
 if (!$result) {
   die('Invalid query: ' . mysql_error());
