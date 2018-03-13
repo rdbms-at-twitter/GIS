@@ -30,3 +30,4 @@ https://dev.mysql.com/doc/refman/8.0/en/spatial-analysis-functions.html
  - phpsqlajax_dbinfo.php (set db access info)
  - nodes_nodetags.ZIP (dump for the sample tables)
  
+<img src="http://variable.jp/wp-content/uploads/2018/03/demo_geohash.png" alt="GIS on MySQL80" title="geohash">
